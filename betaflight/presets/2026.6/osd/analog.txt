@@ -1,0 +1,43 @@
+#$ TITLE: KPU analog OSD
+#$ FIRMWARE_VERSION: 2025.12
+#$ FIRMWARE_VERSION: 2026.6
+#$ CATEGORY: OSD
+#$ STATUS: COMMUNITY
+#$ KEYWORDS: kpu, osd, analog, max7456, whoop, ntsc
+#$ AUTHOR: kpucynski
+#$ DESCRIPTION: Analog MAX7456 OSD from AIR75 II C (2026.6.1 dump).
+#$ DESCRIPTION: Matches the analog whoop family (AIR65 / AIR75). Does not change VTX table or PIDs.
+
+set osd_displayport_device = MAX7456
+set vcd_video_system = NTSC
+set osd_warn_bitmask = 320511
+set osd_rssi_alarm = 0
+set osd_link_quality_alarm = 50
+set osd_rssi_dbm_alarm = -99
+set osd_alt_alarm = 0
+set osd_vbat_pos = 6444
+set osd_rssi_pos = 226
+set osd_link_quality_pos = 2337
+set osd_link_tx_power_pos = 2273
+set osd_rssi_dbm_pos = 2305
+set osd_tim_1_pos = 386
+set osd_tim_2_pos = 2454
+set osd_remaining_time_estimate_pos = 33
+set osd_flymode_pos = 2422
+set osd_throttle_pos = 2390
+set osd_vtx_channel_pos = 2081
+set osd_current_pos = 2400
+set osd_mah_drawn_pos = 2434
+set osd_motor_diag_pos = 2358
+set osd_craft_name_pos = 2443
+set osd_home_dist_pos = 98
+set osd_flight_dist_pos = 130
+set osd_warnings_pos = 6474
+set osd_avg_cell_voltage_pos = 44
+set osd_pit_ang_pos = 97
+set osd_rol_ang_pos = 65
+set osd_disarmed_pos = 267
+set osd_esc_tmp_pos = 163
+set osd_esc_rpm_pos = 150
+set osd_core_temp_pos = 278
+set osd_stat_bitmask = 1082279460

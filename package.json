@@ -1,0 +1,18 @@
+{
+  "name": "fpv-firmware-presets",
+  "productName": "KPU FPV Firmware Presets",
+  "description": "Personal Betaflight CLI presets for the KPU drone fleet",
+  "scripts": {
+    "index": "node betaflight/indexer/indexer.js",
+    "verify": "node betaflight/indexer/check.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/kpucynski/fpv"
+  },
+  "author": "kpucynski",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=10.x"
+  }
+}

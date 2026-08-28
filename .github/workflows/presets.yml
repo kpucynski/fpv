@@ -1,0 +1,69 @@
+name: Presets
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'betaflight/**'
+      - 'package.json'
+      - '.github/workflows/presets.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'betaflight/**'
+      - 'package.json'
+      - '.github/workflows/presets.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: presets-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify presets
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+
+      - run: npm run verify
+
+  index:
+    name: Rebuild index
+    needs: verify
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+
+      - run: npm run index
+
+      - name: Commit index if changed
+        run: |
+          if [ -z "$(git status --porcelain -- index.json index_hash.txt)" ]; then
+            echo "Index already up to date."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.json index_hash.txt
+          git commit -m "chore: rebuild preset index"
+          git push

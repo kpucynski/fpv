@@ -1,0 +1,32 @@
+# KPU INAV fixed-wing base
+# Common to DART 250G (INAV 9.0.0) and PENGUIN (INAV 8.0.1).
+# Paste into the CLI, then `save`. Board/airframe values are NOT set here:
+# no calibration, board alignment, serial ports, mixer, servos, or battery scaling.
+
+feature GPS
+feature PWM_OUTPUT_ENABLE
+feature FW_AUTOTRIM
+
+beeper -ON_USB
+
+# gyro filtering
+set gyro_main_lpf_hz = 25
+set dynamic_gyro_notch_q = 250
+set dynamic_gyro_notch_min_hz = 30
+set gyro_adaptive_filter_min_hz = 20
+
+# sensors: no compass on either plane, SPL06 baro, synthetic airspeed
+set mag_hardware = NONE
+set baro_hardware = SPL06
+set pitot_hardware = VIRTUAL
+
+set gps_sbas_mode = AUTO
+set failsafe_procedure = RTH
+set small_angle = 180
+set airmode_type = STICK_CENTER_ONCE
+set report_cell_voltage = ON
+set tz_automatic_dst = EU
+
+# Board orientation is per-airframe. Both planes currently fly the FC rotated
+# 180 deg, but confirm against your own mounting before enabling:
+# set align_board_yaw = 1800

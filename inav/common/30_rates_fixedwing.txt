@@ -1,0 +1,21 @@
+# KPU INAV fixed-wing rates and expo (control profile 1)
+# Selects control profile 1 first, so the `set` lines land in the right profile.
+# Paste into the CLI, then `save`.
+
+control_profile 1
+
+set rc_expo = 30
+set rc_yaw_expo = 30
+set roll_rate = 18
+
+set dterm_lpf_hz = 10
+set d_boost_min = 1.000
+set d_boost_max = 1.000
+
+# Per-airframe, left out on purpose:
+#   pitch_rate  DART 9,  PENGUIN 15
+#   yaw_rate    DART 3,  PENGUIN 4
+#   fw_p_* / fw_i_* / fw_d_* / fw_ff_*        (airframe tune)
+#   max_angle_inclination_rll / _pit          DART 550, PENGUIN 520/400
+#   nav_fw_pos_z_p / nav_fw_pos_xy_p          DART 35/70, PENGUIN 25/55
+#   fw_turn_assist_pitch_gain                 DART 0.300, PENGUIN 0.400
