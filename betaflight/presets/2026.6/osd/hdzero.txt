@@ -1,0 +1,82 @@
+#$ TITLE: KPU HDZero / digital whoop OSD
+#$ FIRMWARE_VERSION: 2025.12
+#$ FIRMWARE_VERSION: 2026.6
+#$ CATEGORY: OSD
+#$ STATUS: COMMUNITY
+#$ KEYWORDS: kpu, osd, hdzero, digital, whoop, walksnail
+#$ AUTHOR: kpucynski
+#$ DESCRIPTION: Shared HD canvas OSD from Meteor65 Pro, Pavo Femto, Oasis, Seeker, and Master 3X dumps.
+#$ DESCRIPTION: Use the whoop option for M6 F HD (HDZero 1S). Does not change VTX table.
+
+set osd_warn_bitmask = 319487
+set osd_link_quality_alarm = 50
+set osd_rssi_dbm_alarm = -95
+set osd_tim2 = 2562
+set osd_vbat_pos = 1571
+set osd_rssi_pos = 353
+set osd_link_quality_pos = 2273
+set osd_link_tx_power_pos = 353
+set osd_rssi_dbm_pos = 2305
+set osd_rsnr_pos = 385
+set osd_tim_1_pos = 3374
+set osd_tim_2_pos = 3342
+set osd_remaining_time_estimate_pos = 1614
+set osd_flymode_pos = 3631
+set osd_g_force_pos = 2081
+set osd_throttle_pos = 3567
+set osd_crosshairs_pos = 2361
+set osd_ah_sbar_pos = 314
+set osd_ah_pos = 2234
+set osd_current_pos = 2624
+set osd_mah_drawn_pos = 2593
+set osd_motor_diag_pos = 3599
+set osd_craft_name_pos = 2645
+set osd_gps_speed_pos = 3503
+set osd_gps_lon_pos = 7208
+set osd_gps_lat_pos = 7176
+set osd_gps_sats_pos = 3144
+set osd_home_dir_pos = 6330
+set osd_home_dist_pos = 3176
+set osd_flight_dist_pos = 3183
+set osd_compass_bar_pos = 2102
+set osd_altitude_pos = 3438
+set osd_debug_pos = 293
+set osd_warnings_pos = 14837
+set osd_avg_cell_voltage_pos = 7715
+set osd_pit_ang_pos = 97
+set osd_rol_ang_pos = 129
+set osd_battery_usage_pos = 49569
+set osd_nvario_pos = 3535
+set osd_esc_tmp_pos = 129
+set osd_flip_arrow_pos = 3598
+set osd_core_temp_pos = 2113
+set osd_stick_overlay_left_pos = 338
+set osd_stick_overlay_right_pos = 348
+set osd_stat_bitmask = 1889947390
+set osd_gps_sats_show_pdop = ON
+
+#$ OPTION BEGIN (UNCHECKED): M6 F HD whoop layout
+    set osd_warn_bitmask = 40959
+    set osd_link_quality_alarm = 0
+    set osd_rssi_dbm_alarm = -99
+    set osd_cap_alarm = 280
+    set osd_vbat_pos = 45
+    set osd_rssi_pos = 33
+    set osd_link_quality_pos = 2401
+    set osd_link_tx_power_pos = 234
+    set osd_rssi_dbm_pos = 2369
+    set osd_tim_1_pos = 3115
+    set osd_tim_2_pos = 3147
+    set osd_flymode_pos = 3562
+    set osd_throttle_pos = 3530
+    set osd_vtx_channel_pos = 2081
+    set osd_current_pos = 2528
+    set osd_mah_drawn_pos = 2497
+    set osd_motor_diag_pos = 3498
+    set osd_craft_name_pos = 2579
+    set osd_warnings_pos = 329
+    set osd_avg_cell_voltage_pos = 2457
+    set osd_disarmed_pos = 2514
+    set osd_core_temp_pos = 2273
+    set osd_stat_bitmask = 1619150372
+#$ OPTION END

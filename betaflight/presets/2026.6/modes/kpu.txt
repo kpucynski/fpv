@@ -1,0 +1,35 @@
+#$ TITLE: KPU mode switches
+#$ FIRMWARE_VERSION: 2025.12
+#$ FIRMWARE_VERSION: 2026.6
+#$ CATEGORY: MODES
+#$ STATUS: COMMUNITY
+#$ KEYWORDS: kpu, modes, aux, arm, angle, gps, whoop
+#$ AUTHOR: kpucynski
+#$ DESCRIPTION: Shared AUX map from fleet dumps. Default is the GPS/freestyle layout (Oasis, Seeker, Vapor, Master 3X).
+#$ DESCRIPTION: Channel numbers are 0-based AUX (0 = CH5). Overwrites existing aux slots 0-9.
+#$ FORCE_OPTIONS_REVIEW: TRUE
+
+#$ OPTION_GROUP BEGIN: (EXCLUSIVE) Mode map
+    #$ OPTION BEGIN (CHECKED): GPS freestyle (CH5 ARM, CH6 ANGLE, CH7 BEEPER/POSHOLD)
+        aux 0 0 0 1700 2100 0 0
+        aux 1 1 1 1700 2100 0 0
+        aux 2 2 0 1300 1700 0 0
+        aux 3 3 4 1300 1700 0 0
+        aux 4 11 4 1700 2100 0 0
+        aux 5 46 2 1700 2100 0 0
+        aux 6 13 2 1300 2100 0 0
+        aux 7 35 3 1700 2100 0 0
+        aux 8 36 5 1700 2100 0 0
+        aux 9 49 3 1300 1700 0 0
+    #$ OPTION END
+    #$ OPTION BEGIN (UNCHECKED): Analog whoop AIR75 II C
+        aux 0 0 0 1700 2100 0 0
+        aux 1 1 1 1700 2100 0 0
+        aux 2 13 2 1700 2100 0 0
+        aux 3 28 1 1300 2100 0 0
+        aux 4 35 2 1300 1700 0 0
+        aux 5 36 5 1700 2100 0 0
+        aux 6 39 3 1700 2100 0 0
+        aux 7 49 3 1300 1700 0 0
+    #$ OPTION END
+#$ OPTION_GROUP END
