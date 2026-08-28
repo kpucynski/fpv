@@ -1,0 +1,27 @@
+# KPU INAV fixed-wing navigation: RTH, waypoints, launch
+# Common to DART 250G and PENGUIN. Paste into the CLI, then `save`.
+
+# RTH
+set nav_rth_allow_landing = FS_ONLY
+set nav_rth_alt_mode = MAX
+set nav_rth_altitude = 5000
+set nav_wp_max_safe_distance = 500
+
+# fixed-wing handling
+set nav_fw_bank_angle = 45
+set nav_fw_control_smoothness = 2
+
+# auto-launch
+set nav_fw_launch_velocity = 150
+set nav_fw_launch_accel = 1500
+set nav_fw_launch_max_angle = 60
+set nav_fw_launch_idle_motor_delay = 3000
+set nav_fw_launch_min_time = 1000
+set nav_fw_launch_max_altitude = 5000
+
+# Per-airframe, left out on purpose (values differ between the two planes):
+#   nav_wp_radius              DART 1000, PENGUIN 5000
+#   nav_fw_launch_climb_angle  DART 22,   PENGUIN 25
+#   nav_fw_launch_timeout      DART 4500, PENGUIN 10000
+#   nav_fw_launch_motor_delay  DART 100,  PENGUIN 0
+#   nav_fw_launch_thr / nav_fw_launch_idle_thr  (battery profile)

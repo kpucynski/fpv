@@ -1,0 +1,22 @@
+# KPU INAV blackbox logging, fixed wing
+# Common to DART 250G and PENGUIN. Paste into the CLI, then `save`.
+
+set blackbox_rate_denom = 2
+
+blackbox NAV_POS
+blackbox NAV_PID
+blackbox MAG
+blackbox ACC
+blackbox ATTI
+blackbox RC_DATA
+blackbox RC_COMMAND
+blackbox MOTORS
+blackbox SERVOS
+blackbox -GYRO_RAW
+blackbox -PEAKS_R
+blackbox -PEAKS_P
+blackbox -PEAKS_Y
+
+# NAV_ACC differs: enabled on PENGUIN, disabled on DART. Pick one:
+# blackbox NAV_ACC
+# blackbox -NAV_ACC

@@ -1,0 +1,16 @@
+# KPU INAV mode switches, fixed wing
+# Only the aux slots that are identical on DART 250G and PENGUIN.
+# Box IDs are copied straight from the dumps; check the Modes tab after applying.
+# Paste into the CLI, then `save`.
+
+# aux <slot> <box id> <aux channel> <range start> <range end>
+aux 0 0 0 1300 2100
+aux 1 51 5 1700 2100
+aux 2 1 1 900 1300
+aux 4 12 1 1700 2100
+aux 8 10 4 1700 2100
+
+# The remaining slots use different channels per plane, so they are not shared:
+#   DART 250G  aux 3/5/6/7/9/10/11/12/13
+#   PENGUIN    aux 3/5/6/7/9/10/11/12/13/14
+# Copy those from the craft's own backup in Dropbox /FPV/INAV.
